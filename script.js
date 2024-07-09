@@ -11,6 +11,7 @@ input.addEventListener('keypress',function(e){
 function addItem(e){
   
   const item_value  = input.value;
+  //change
   //to check to whether gets the item_value or not
   //console.log(item_value);
   const item = document.createElement('div');

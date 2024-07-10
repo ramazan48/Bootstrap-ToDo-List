@@ -19,7 +19,6 @@ function addItem(e){
   else{
     alert("Task has been added");
   }
-  console.log(item_value);
   const item = document.createElement('div');
   item.classList.add('item');
 
@@ -64,6 +63,11 @@ function addItem(e){
       input_item.focus();
     }
     else{
+      console.log(input_item.value);
+      if(/^\s*$/.test(input_item.value)){
+        alert("You can not add empty string");
+        return 0;
+      }
       edit_item.innerText = "Edit";
       input_item.setAttribute("readonly", "readonly");
       alert("Task has been edited");

@@ -1,19 +1,25 @@
 var add = document.getElementById('addToDo');
 var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
-
 add.addEventListener('click',addItem);
 input.addEventListener('keypress',function(e){
-    if(e.key=="Enter"){
+    if(e.key=="Enter" && input.value!= ""){
         addItem();
-    }
+      }
 });
 function addItem(e){
-  
   const item_value  = input.value;
   //change
   //to check to whether gets the item_value or not
   //console.log(item_value);
+  if(/^\s*$/.test(item_value)){
+    alert("You can not add empty string");
+    return 0;
+  }
+  else{
+    alert("Task has been added");
+  }
+  console.log(item_value);
   const item = document.createElement('div');
   item.classList.add('item');
 
@@ -27,16 +33,18 @@ function addItem(e){
   input_item.setAttribute('readonly', 'readonly');
   input_item.addEventListener('dblclick', function(){
     input_item.style.textDecoration = 'line-through';
+    alert("The task has been completed");
   })
-  
+
   item_content.appendChild(input_item);
   const item_action = document.createElement('div');
   item_action.classList.add('actions');
 
+
   const edit_item = document.createElement('button');
   edit_item.classList.add('edit','btn','btn-success');
   edit_item.type = 'button';
-  edit_item.innerText = 'Edit';  
+  edit_item.innerText = 'Edit';
 
   const delete_item = document.createElement('buttonn');
   delete_item.classList.add('delete','btn','btn-danger','fa','fa-trash');
@@ -58,10 +66,12 @@ function addItem(e){
     else{
       edit_item.innerText = "Edit";
       input_item.setAttribute("readonly", "readonly");
+      alert("Task has been edited");
     }  
   });
 
   delete_item.addEventListener('click', (e) => {
     toDoContainer.removeChild(item);
+    alert("Task has been deleted");
   })
 }

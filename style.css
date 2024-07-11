@@ -1,6 +1,6 @@
 .margarine-regular {
     font-family: "Margarine", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
   }
   *{
@@ -68,15 +68,13 @@
   .item .delete{
     margin-left: 0.5rem;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 2rem;
     padding: 2px 6px;
-    height: 25px;
   }
   .item div :hover{
-    background: #ddd;
+    opacity: 50%;
   }
   .main-container{
-    margin-top: 10em;
     border-radius: 15px;
     box-shadow: 10px 10px #888888;
     background: rgb(246, 243, 243);

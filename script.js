@@ -34,10 +34,6 @@ function addItem(e){
   else{
     alert("Task has been added");
   }
-  for(j=0; j<68;j++){
-    console.log(colorArray[j]);
-  }
-
   const item = document.createElement('div');
   item.classList.add('item');
 
@@ -46,14 +42,9 @@ function addItem(e){
   item.appendChild(item_content);
 
   const input_item = document.createElement('input');
-  input_item.classList.add('text','margarine-regular','red');
+  input_item.classList.add('text','margarine-regular');
   input_item.value = item_value;
   input_item.setAttribute('readonly', 'readonly');
-  input_item.addEventListener('dblclick', function(){
-    input_item.style.textDecoration = 'line-through';
-    input_item.style.textDecorationColor = "black";
-    alert("The task has been completed");
-  })
 
   //Produce random numbers between 0 and max(input)
   function getRandomInt(max) {
@@ -62,7 +53,7 @@ function addItem(e){
   //It changes each input-text-background-color
   input_item.style.color = "white";
   input_item.style.backgroundColor = colorArray[getRandomInt(66)];
-  input_item.style.fontSize = "1.5vw"
+  input_item.style.fontSize = "1.2vw";
 
   item_content.appendChild(input_item);
   const item_action = document.createElement('div');
@@ -70,24 +61,35 @@ function addItem(e){
 
   const edit_item = document.createElement('button');
   edit_item.classList.add('edit','btn','btn-success');
-  edit_item.style.fontSize = "1.5vw";
+  edit_item.style.fontSize = "1.2vw";
   edit_item.type = 'button';
   edit_item.innerText = 'Edit';
 
-
+  const done_item = document.createElement('button');
+  done_item.classList.add('done','btn','btn-primary');
+  done_item.style.fontSize = "1.2vw";
+  done_item.type = 'button';
+  done_item.innerText = 'Done';
+  done_item.style.color = 'white';
 
   const delete_item = document.createElement('buttonn');
   delete_item.style.fontSize = "2vw";
   delete_item.classList.add('delete','btn','btn-danger','fa','fa-trash');
   
 
+  item_action.appendChild(done_item);
   item_action.appendChild(edit_item);
   item_action.appendChild(delete_item);
   item.appendChild(item_action);
 
-
   toDoContainer.appendChild(item);
 
+  //Completing tasks
+  done_item.addEventListener('click', (e)=> {
+    input_item.style.textDecoration = 'line-through';
+    input_item.style.textDecorationColor = "black";
+    alert("The task has been completed");
+  }) 
   //Editing tasks
   input.value = '';
   edit_item.addEventListener('click', (e) => {

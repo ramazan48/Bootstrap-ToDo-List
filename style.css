@@ -20,6 +20,7 @@
     text-shadow: 3px 3px 3px black;
     text-align: center;
   }
+
   @media screen and (max-width: 800px){ 
     .container{
         width: 70%;
@@ -50,6 +51,8 @@
   .item .content .text{
     font-size: 1.125rem;
     width: 100%;
+    height: 100%;
+    flex-direction: column;
     border-color: transparent;
   }
   .item .content .text:hover{
@@ -80,5 +83,5 @@
     background: rgb(246, 243, 243);
   }
   .container{
-    width: 50%;
+    width: 70%;
   }

@@ -73,7 +73,7 @@ function addItem(e){
   done_item.style.color = 'white';
 
   const delete_item = document.createElement('buttonn');
-  delete_item.style.fontSize = "2vw";
+  delete_item.style.fontSize = "1.5vw";
   delete_item.classList.add('delete','btn','btn-danger','fa','fa-trash');
   
 

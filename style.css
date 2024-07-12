@@ -45,7 +45,7 @@ body{
 }
 .content{
   display: 1 1 0%;
-  width: 72%;
+  width: 70%;
 }
 .item .content .text{
   font-size: 1.125rem;
@@ -82,5 +82,5 @@ body{
   background: rgb(246, 243, 243);
 }
 .container{
-  width: 80%;
+  width: 85%;
 }

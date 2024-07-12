@@ -53,7 +53,7 @@ function addItem(e){
   //It changes each input-text-background-color
   input_item.style.color = "white";
   input_item.style.backgroundColor = colorArray[getRandomInt(66)];
-  input_item.style.fontSize = "1.2vw";
+  input_item.style.fontSize = "1.1vw";
 
   item_content.appendChild(input_item);
   const item_action = document.createElement('div');
@@ -61,19 +61,19 @@ function addItem(e){
 
   const edit_item = document.createElement('button');
   edit_item.classList.add('edit','btn','btn-success');
-  edit_item.style.fontSize = "1.2vw";
+  edit_item.style.fontSize = "1.1vw";
   edit_item.type = 'button';
   edit_item.innerText = 'Edit';
 
   const done_item = document.createElement('button');
   done_item.classList.add('done','btn','btn-primary');
-  done_item.style.fontSize = "1.2vw";
+  done_item.style.fontSize = "1.1vw";
   done_item.type = 'button';
   done_item.innerText = 'Done';
   done_item.style.color = 'white';
 
   const delete_item = document.createElement('buttonn');
-  delete_item.style.fontSize = "1.5vw";
+  delete_item.style.fontSize = "1.4vw";
   delete_item.classList.add('delete','btn','btn-danger','fa','fa-trash');
   
 

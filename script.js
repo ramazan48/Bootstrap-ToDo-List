@@ -16,6 +16,23 @@ var colorArray =
 var add = document.getElementById('addToDo');
 var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
+var alerts = document.querySelectorAll('.alert');
+function showAlert(message, alertType) {
+  // Create the alert element
+  var alert = document.createElement('div');
+  alert.className = 'alert alert-' + alertType;
+  alert.role = 'alert';
+  alert.innerText = message;
+  alert.style.width = "30%";
+  alert.style.marginLeft = "70%";
+
+  document.getElementById('alertContainer').appendChild(alert);
+
+  setTimeout(function() {
+    alert.parentNode.removeChild(alert);
+}, 3000);
+
+}
 //add.addEventListener('click',addItem);
 input.addEventListener('keypress',function(e){
     if(e.key=="Enter" && input.value!= ""){
@@ -28,11 +45,11 @@ function addItem(e){
   //to check to whether gets the item_value or not
   //console.log(item_value);
   if(/^\s*$/.test(item_value)){
-    alert("You can not add empty string");
+    showAlert("You can't add empty string", "warning");
     return 0;
   }
   else{
-    alert("Task has been added");
+    showAlert("Task has been added","success");
   }
   const item = document.createElement('div');
   item.classList.add('item');
@@ -88,15 +105,14 @@ function addItem(e){
   done_item.addEventListener('click', (e)=> {
     input_item.style.textDecoration = 'line-through';
     input_item.style.textDecorationColor = "black";
-
-    alert("The task has been completed");
+    showAlert("The task has been completed", "success");
   }) 
   //Editing tasks
   input.value = '';
   edit_item.addEventListener('click', (e) => {
     if(edit_item.innerText.toLowerCase() == "edit"){
       if(input_item.style.textDecorationColor == "black"){
-        alert("You cannot edit completed task");
+        showAlert("You cannot edit completed task", "warning");
         return 0;
       }
         edit_item.innerText = "Save";
@@ -107,12 +123,12 @@ function addItem(e){
         //Edit input
         //console.log(input_item.value);
         if(/^\s*$/.test(input_item.value)){
-          alert("You can not add empty string");
+          showAlert("You can not add empty string", "warning");
           return 0;
         }
         edit_item.innerText = "Edit";
         input_item.setAttribute("readonly", "readonly");
-        alert("Task has been edited");
+        showAlert("Task has been edited", "success");
       }
   
   });
@@ -120,6 +136,6 @@ function addItem(e){
   //Deleting tasks
   delete_item.addEventListener('click', (e) => {
     toDoContainer.removeChild(item);
-    alert("Task has been deleted");
+    showAlert("Task has been deleted", "success");
   })
 }

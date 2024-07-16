@@ -16,7 +16,6 @@ var colorArray =
 var add = document.getElementById('addToDo');
 var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
-var alerts = document.querySelectorAll('.alert');
 function showAlert(message, alertType) {
   var alert = document.createElement('div');
   alert.className = 'alert alert-' + alertType;
@@ -24,6 +23,7 @@ function showAlert(message, alertType) {
   alert.innerText = message;
   alert.style.width = "30%";
   alert.style.marginLeft = "70%";
+  alert.style.fontSize = "1.5vw";
 
   document.getElementById('alertContainer').appendChild(alert);
 

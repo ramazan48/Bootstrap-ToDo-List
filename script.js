@@ -18,7 +18,6 @@ var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
 var alerts = document.querySelectorAll('.alert');
 function showAlert(message, alertType) {
-  // Create the alert element
   var alert = document.createElement('div');
   alert.className = 'alert alert-' + alertType;
   alert.role = 'alert';

@@ -16,6 +16,7 @@ var colorArray =
 var add = document.getElementById('addToDo');
 var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
+let doNotEdit = "true";
 //add.addEventListener('click',addItem);
 input.addEventListener('keypress',function(e){
     if(e.key=="Enter" && input.value!= ""){
@@ -88,27 +89,33 @@ function addItem(e){
   done_item.addEventListener('click', (e)=> {
     input_item.style.textDecoration = 'line-through';
     input_item.style.textDecorationColor = "black";
+
     alert("The task has been completed");
   }) 
   //Editing tasks
   input.value = '';
   edit_item.addEventListener('click', (e) => {
     if(edit_item.innerText.toLowerCase() == "edit"){
-      edit_item.innerText = "Save";
-      input_item.removeAttribute("readonly");
-      input_item.focus();
-    }
-    else{
-      //Edit input
-      console.log(input_item.value);
-      if(/^\s*$/.test(input_item.value)){
-        alert("You can not add empty string");
+      if(input_item.style.textDecorationColor == "black"){
+        alert("You cannot edit completed task");
         return 0;
       }
-      edit_item.innerText = "Edit";
-      input_item.setAttribute("readonly", "readonly");
-      alert("Task has been edited");
-    }  
+        edit_item.innerText = "Save";
+        input_item.removeAttribute("readonly");
+        input_item.focus();
+      }
+    else{
+        //Edit input
+        //console.log(input_item.value);
+        if(/^\s*$/.test(input_item.value)){
+          alert("You can not add empty string");
+          return 0;
+        }
+        edit_item.innerText = "Edit";
+        input_item.setAttribute("readonly", "readonly");
+        alert("Task has been edited");
+      }
+  
   });
 
   //Deleting tasks

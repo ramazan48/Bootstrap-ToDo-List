@@ -16,7 +16,6 @@ var colorArray =
 var add = document.getElementById('addToDo');
 var input = document.getElementById('inputField');
 var toDoContainer = document.getElementById('toDoContainer');
-let doNotEdit = "true";
 //add.addEventListener('click',addItem);
 input.addEventListener('keypress',function(e){
     if(e.key=="Enter" && input.value!= ""){

@@ -102,9 +102,20 @@ function addItem(e){
 
   //Completing tasks
   done_item.addEventListener('click', (e)=> {
-    input_item.style.textDecoration = 'line-through';
-    input_item.style.textDecorationColor = "black";
-    showAlert("The task has been completed", "success");
+    if(done_item.innerText.toLowerCase() == "done"){
+      input_item.style.textDecoration = 'line-through';
+      input_item.style.textDecorationColor = "black";
+      showAlert("The task has been completed", "success");
+      done_item.innerText = "Undone";
+      done_item.classList.add('btn-warning');
+    }
+    else{
+      done_item.innerText = "Done";
+      input_item.style.textDecoration = "initial";
+      done_item.classList.remove('btn-warning');
+      showAlert("The task has been undoned", "warning");
+    }
+    
   }) 
   //Editing tasks
   input.value = '';

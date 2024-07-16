@@ -20,25 +20,6 @@ body{
   text-shadow: 3px 3px 3px black;
   text-align: center;
 }
-
-/*@media screen and (max-width: 800px){ 
-  .container{
-      width: 70%;
-      font-size: 50px;
-  }
-}
-@media screen and (max-width: 650px){
-  .container{
-      width: 80%;
-      font-size: 30px;
-  }
-}
-@media screen and (max-width: 500px){
-  .container{
-      width: 99%;
-      font-size: 15px;
-  }
-}*/
 .item{
   display: flex;
   flex-direction: row;

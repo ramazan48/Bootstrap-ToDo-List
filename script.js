@@ -113,7 +113,7 @@ function addItem(e){
       done_item.innerText = "Done";
       input_item.style.textDecoration = "initial";
       done_item.classList.remove('btn-warning');
-      showAlert("The task has been undoned", "warning");
+      showAlert("The task was undone", "warning");
     }
     
   }) 
